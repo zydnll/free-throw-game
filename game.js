@@ -1,5 +1,6 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
+const courtStage = document.querySelector(".court-stage");
 
 const madeCountEl = document.getElementById("madeCount");
 const shotCountEl = document.getElementById("shotCount");
@@ -777,6 +778,9 @@ function renderCharacters() {
 }
 
 window.addEventListener("resize", resizeCanvas);
+courtStage.addEventListener("contextmenu", (event) => event.preventDefault());
+courtStage.addEventListener("selectstart", (event) => event.preventDefault());
+courtStage.addEventListener("dragstart", (event) => event.preventDefault());
 shootButton.addEventListener("pointerdown", startAim);
 window.addEventListener("pointerup", releaseShot);
 window.addEventListener("pointercancel", releaseShot);
