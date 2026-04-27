@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>罚球线</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="court-stage" aria-label="篮球罚球游戏">
+        <canvas id="gameCanvas" width="1280" height="720"></canvas>
+
+        <div class="topbar">
+          <div class="scoreboard">
+            <span>命中</span>
+            <strong id="madeCount">0</strong>
+            <span>/</span>
+            <strong id="shotCount">0</strong>
+          </div>
+          <div class="feedback" id="feedback">按住投篮键，抛物线对准篮筐时松手</div>
+          <button class="icon-button" id="resetButton" type="button" aria-label="重新开始" title="重新开始">
+            ↻
+          </button>
+        </div>
+
+        <aside class="character-panel is-collapsed" id="characterPanel" aria-label="选择球员">
+          <button class="panel-toggle" id="characterToggle" type="button" aria-expanded="false">
+            <span id="selectedAvatar" class="avatar-dot text-avatar">明</span>
+            <span id="selectedName">一号后卫</span>
+          </button>
+          <div class="panel-title">选择球员</div>
+          <div class="character-grid" id="characterGrid"></div>
+        </aside>
+
+        <div class="power-wrap">
+          <div class="power-label">
+            <span>出手力度</span>
+            <strong id="powerText">0%</strong>
+          </div>
+          <div class="power-meter" aria-hidden="true">
+            <div id="powerFill"></div>
+          </div>
+        </div>
+
+        <button class="shoot-button" id="shootButton" type="button">
+          <span>按住投篮</span>
+        </button>
+
+        <div class="result-modal" id="resultModal" aria-hidden="true">
+          <div class="result-dialog" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+            <div class="result-title" id="resultTitle">结算</div>
+            <p id="resultMessage"></p>
+            <button class="result-button" id="playAgainButton" type="button">再来一局</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
