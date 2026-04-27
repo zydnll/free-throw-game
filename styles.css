@@ -274,6 +274,8 @@ button {
   bottom: 18px;
   width: 260px;
   height: 62px;
+  display: grid;
+  place-items: center;
   border-radius: 8px;
   color: #121416;
   font-weight: 800;
@@ -282,6 +284,38 @@ button {
   cursor: pointer;
   pointer-events: auto;
   touch-action: none;
+}
+
+.shoot-ball {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: block;
+  overflow: hidden;
+  border: 2px solid #5b2a16;
+  border-radius: 50%;
+  background: #d96824;
+  box-shadow:
+    inset -8px -8px 0 rgba(91, 42, 22, 0.18),
+    0 2px 0 rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+}
+
+.shoot-ball::before,
+.shoot-ball::after {
+  position: absolute;
+  content: "";
+  inset: -4px;
+  border: 2px solid #5b2a16;
+  border-radius: 50%;
+}
+
+.shoot-ball::before {
+  transform: translateX(-18px);
+}
+
+.shoot-ball::after {
+  transform: translateY(-18px);
 }
 
 .shoot-button:active,
